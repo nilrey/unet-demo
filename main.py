@@ -273,10 +273,10 @@ class BetterVideoObjectDetector:
 
 # Использование
 if __name__ == "__main__":
+    time_start = datetime.now()
     detector = BetterVideoObjectDetector(confidence_threshold=0.5)
     input_file = "cars_1_1"
-    time_start = datetime.now()
-    detector.process_video(f"data/input/{input_file}.mp4", 
-                          f"data/output/out-{input_file}-resnet50-002.mp4", 
+    detector.process_video(video_path=f"data/input/{input_file}.mp4", 
+                          output_path=f"data/output/out-{input_file}-unet.mp4", 
                           show_preview=False)
     print(f'Время работы: {datetime.now() - time_start} сек.')
